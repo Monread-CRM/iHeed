@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`automation.Link_Contact_to_Account` runs for a Contact record and tries to link that Contact to an existing Account based on the Contact's Clinic value. If it finds one reliable match, it also assigns that Account to every Deal associated with the Contact.
+`automation.Link_Contact_to_Account` runs for a Contact record and tries to link that Contact to an existing Account based on the Contact's Clinic value. If it finds one exact match, it also assigns that Account to every Deal associated with the Contact.
 
 The function deliberately does **not** create Accounts, Contacts, or Deals. It only links records that already exist.
 
@@ -10,11 +10,11 @@ The function deliberately does **not** create Accounts, Contacts, or Deals. It o
 
 ### Normal use
 
-No one needs to run the function manually during normal use. It runs automatically when a new Contact is created or when that Contact's Clinic field is changed.
+No one needs to run the function manually, it runs automatically when a new Contact is created.
 
 To use it:
 
-1. Create or open a Contact.
+1. Create a Contact.
 2. Enter the clinic name in the **Clinic** field.
 3. Save the Contact.
 4. The function checks the Account names in the background.
@@ -34,10 +34,10 @@ If it finds one exact Account name, it fills in the Contact's **Account Name** a
 
 Use test records where possible so that real Contacts and Deals are not changed accidentally.
 
-1. Create an Account called, for example, `Health Test Clinic`.
-2. Create a Contact and enter `Health Test Clinic` in its **Clinic** field.
+1. Create an Account called, for example, `Test Clinic`.
+2. Create a Contact and enter `Test Clinic` in its **Clinic** field.
 3. Save the Contact.
-4. Confirm the Contact's **Account Name** is now `Health Test Clinic`.
+4. Confirm the Contact's **Account Name** is now `Test Clinic`.
 5. If the Contact has an associated Deal, confirm the Deal's **Account Name** was also updated.
 
 ## Processing flow
